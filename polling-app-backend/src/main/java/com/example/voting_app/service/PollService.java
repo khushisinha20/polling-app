@@ -1,8 +1,10 @@
 package com.example.voting_app.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.example.voting_app.model.Poll;
@@ -20,6 +22,10 @@ public class PollService {
 
 	public List<Poll> getAllPolls() {
 		return pollRepository.findAll();
+	}
+
+	public Optional<Poll> getPollById(Long id) {
+		return pollRepository.findById(id);
 	}
     
     
