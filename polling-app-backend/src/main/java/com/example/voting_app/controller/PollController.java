@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.voting_app.model.Poll;
+import com.example.voting_app.model.Vote;
 import com.example.voting_app.service.PollService;
 
 @RestController
@@ -36,5 +37,10 @@ public class PollController {
 		return pollService.getPollById(id)
 				.map(ResponseEntity::ok)
 				.orElse(ResponseEntity.notFound().build());
+	}
+	
+	@PostMapping("/vote")
+	public void vote(@RequestBody Vote vote) {
+		pollService.vote(vote.getPollId(), vote.getOptionIndex());
 	}
 }
