@@ -11,6 +11,7 @@ import com.example.voting_app.model.OptionVote;
 import com.example.voting_app.model.Poll;
 import com.example.voting_app.repository.PollRepository;
 
+
 @Service
 public class PollService {
 
@@ -18,7 +19,7 @@ public class PollService {
     private PollRepository pollRepository;
 
     public Poll createPoll(Poll poll) {
-        return pollRepository.save(poll);
+    	return pollRepository.save(poll);
     }
 
 	public List<Poll> getAllPolls() {
