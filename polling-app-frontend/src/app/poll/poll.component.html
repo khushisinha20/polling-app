@@ -17,6 +17,11 @@
                     class="form-control"
                     required
                 />
+                <button *ngIf = "newPoll.options.length > 2" 
+                    (click) = "newPoll.options.splice(i, 1)"
+                    class = "btn btn-danger">
+                    Remove
+                </button>
         </div>
     </div>
 
