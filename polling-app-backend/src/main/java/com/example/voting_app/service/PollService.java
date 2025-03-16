@@ -1,5 +1,7 @@
 package com.example.voting_app.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,4 +17,10 @@ public class PollService {
     public Poll createPoll(Poll poll) {
         return pollRepository.save(poll);
     }
+
+	public List<Poll> getAllPolls() {
+		return pollRepository.findAll();
+	}
+    
+    
 }

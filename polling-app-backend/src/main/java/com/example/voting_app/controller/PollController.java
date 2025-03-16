@@ -1,6 +1,9 @@
 package com.example.voting_app.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,5 +22,10 @@ public class PollController {
 	@PostMapping
 	public Poll createPoll(@RequestBody Poll poll) {
 		return pollService.createPoll(poll);
+	}
+	
+	@GetMapping
+	public List<Poll> getAllPolls() {
+		return pollService.getAllPolls();
 	}
 }
